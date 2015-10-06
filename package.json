@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "imacros-play-macro": "cyxou/imacros-play-macro"
+    "imacros-play-code": "github:cyxou/imacros-play-code"
   },
   "devDependencies": {
     "add-bom": "^1.0.0",

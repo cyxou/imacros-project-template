@@ -1,3 +1,3 @@
 'use strict';
 
-var playMacro = require('imacros-play-macro');
+var playMacro = require('imacros-play-code');
