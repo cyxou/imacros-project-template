@@ -1,20 +1,19 @@
 {
-  "name": "freeeditor-wp-commenter",
+  "name": "blank",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify src/main.js -p [ bannerify --file ./banner.txt' ] > main.js && add-bom --file main.js",
-    "watch": "browserify src/main.js -p [ bannerify --file ./banner.txt' ] > main.js && add-bom --file main.js"
+    "build": "browserify src/main.js -p [ bannerify --file './banner.txt' ] > main.js && add-bom --file main.js",
+    "watch": "watchify src/main.js -p [ bannerify --file ./banner.txt' ] -o  main.js && add-bom --file main.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "add-bom": "^1.0.0"
+    "imacros-play-macro": "cyxou/imacros-play-macro"
   },
   "devDependencies": {
-    "bannerify": "^1.0.1",
-    "browserify": "^11.2.0",
-    "watchify": "^3.4.0"
+    "add-bom": "^1.0.0",
+    "bannerify": "^1.0.1"
   }
 }
