@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "ecmaFeatures": {
+    "blockBindings": true,
+    "forOf": true,
+    "jsx": true
+  },
+  "rules": {
+    "semi": 2,
+    "no-multi-spaces": 0,
+    "no-mixed-spaces-and-tabs": 0
+  }
+}
