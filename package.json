@@ -1,0 +1,20 @@
+{
+  "name": "freeeditor-wp-commenter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify src/main.js -p [ bannerify --file ./banner.txt' ] > main.js && add-bom --file main.js",
+    "watch": "browserify src/main.js -p [ bannerify --file ./banner.txt' ] > main.js && add-bom --file main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "add-bom": "^1.0.0"
+  },
+  "devDependencies": {
+    "bannerify": "^1.0.1",
+    "browserify": "^11.2.0",
+    "watchify": "^3.4.0"
+  }
+}
