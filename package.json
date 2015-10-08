@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify src/main.js -p [ bannerify --file './banner.txt' ] > main.js && add-bom --file main.js",
-    "watch": "watchify src/main.js -p [ bannerify --file ./banner.txt' ] -o  main.js && add-bom --file main.js"
+    "watch": "watchify src/main.js -p [ bannerify --file './banner.txt' ] -o  main.js && add-bom --file main.js"
   },
   "author": "",
   "license": "MIT",
