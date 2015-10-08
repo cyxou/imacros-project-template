@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/cyxou/imacros-script-boilerplate.git"
   },
-  "author": "",
+  "author": "Alex Sukhov",
   "license": "MIT",
   "dependencies": {
     "imacros-play-code": "cyxou/imacros-play-code"
