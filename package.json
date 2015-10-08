@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify src/main.js -p [ bannerify --file './banner.txt' ] > main.js && add-bom --file main.js",
-    "watch": "watchify src/main.js -p [ bannerify --file './banner.txt' ] -o  main.js && add-bom --file main.js"
+    "build": "browserify src/main.js -p [ bannerify --file banner.txt ] -o main.js && add-bom --file main.js",
+    "watch": "watchify src/main.js -p [ bannerify --file banner.txt ] -o main.js && add-bom --file main.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "add-bom": "^1.0.0",
-    "bannerify": "^1.0.1"
+    "bannerify": "^1.0.1",
+    "browserify": "^11.2.0"
   }
 }
