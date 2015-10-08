@@ -1,1 +1,3 @@
 //imacros-js:showsteps no
+
+var global = this;
