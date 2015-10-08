@@ -4,7 +4,6 @@
     "browser": true,
     "node": true
   },
-  "extends": "eslint:recommended",
   "ecmaFeatures": {
     "blockBindings": true,
     "forOf": true,
@@ -13,6 +12,7 @@
   "rules": {
     "semi": 2,
     "no-multi-spaces": 0,
-    "no-mixed-spaces-and-tabs": 0
+    "no-mixed-spaces-and-tabs": 0,
+    "quotes": [2, "single"]
   }
 }
