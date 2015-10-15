@@ -1,11 +1,12 @@
 {
-  "name": "blank",
+  "name": "imacros-script-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify src/main.js -p [ bannerify --file banner.txt ] -o main.js && add-bom --file main.js",
-    "watch": "watchify src/main.js -p [ bannerify --file banner.txt ] -o main.js && add-bom --file main.js"
+    "prebuild": "rimraf dist && mkdirp dist",
+    "build": "browserify src/main.js -p [ bannerify --file banner.txt ] -o dist/main.js && add-bom --file dist/main.js",
+    "watch": "watchify src/main.js -p [ bannerify --file banner.txt ] -o dist/main.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,8 @@
   "devDependencies": {
     "add-bom": "^1.0.0",
     "bannerify": "^1.0.1",
-    "browserify": "^11.2.0"
+    "browserify": "^11.2.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.4.3"
   }
 }
