@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "rimraf dist && mkdirp dist",
     "build": "browserify src/main.js -p [ bannerify --file banner.txt ] -o dist/main.js && add-bom --file dist/main.js",
+    "prewatch": "rimraf dist && mkdirp dist",
     "watch": "watchify src/main.js -p [ bannerify --file banner.txt ] -o dist/main.js"
   },
   "repository": {
@@ -18,10 +19,11 @@
     "imacros-play-code": "cyxou/imacros-play-code"
   },
   "devDependencies": {
-    "add-bom": "^1.0.0",
-    "bannerify": "^1.0.1",
-    "browserify": "^11.2.0",
+    "add-bom": "latest",
+    "bannerify": "latest",
+    "browserify": "latest",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.4.3"
+    "rimraf": "^2.4.3",
+    "watchify": "latest"
   }
 }
