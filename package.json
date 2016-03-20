@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf dist && mkdirp dist",
-    "build": "browserify src/main.js -p [ bannerify --file banner.txt ] -o dist/main.js && add-bom --file dist/main.js",
-    "prewatch": "rimraf dist && mkdirp dist",
-    "watch": "watchify src/main.js -p [ bannerify --file banner.txt ] -o dist/main.js"
+    "prebuild": "rimraf build && mkdirp build",
+    "build": "browserify src/main.js -p [ bannerify --file banner.txt ] -o build/main.js && add-bom --file build/main.js",
+    "prewatch": "rimraf build && mkdirp build",
+    "watch": "watchify src/main.js -p [ bannerify --file banner.txt ] -o build/main.js"
   },
   "repository": {
     "type": "git",
