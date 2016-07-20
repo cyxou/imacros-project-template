@@ -2,12 +2,22 @@
   "name": "imacros-script-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/dist/macro.js",
   "scripts": {
-    "prebuild": "rimraf build && mkdirp build",
-    "build": "browserify src/main.js -p [ bannerify --file banner.txt ] -o build/main.js && add-bom --file build/main.js",
-    "prewatch": "rimraf build && mkdirp build",
-    "watch": "watchify src/main.js -p [ bannerify --file banner.txt ] -o build/main.js"
+    "//1": "---------------------- UTILITIES ---------------------------------------",
+    "clear:build": "rimraf build && mkdirp build/dist",
+    "copysrc": "cp -rf src/* build/",
+    "lint": "eslint ./src/*.js",
+    "style": "jscs ./src/*.js",
+    "//0": "---------------------- BUILD MACRO -------------------------------------",
+    "bom": "add-bom -f $npm_package_main",
+    "compile": "find ./build/ -name '*.js' -exec printf '\\033[0;34mCompiling {}:\\033[0m\n' \\; -exec java -jar node_modules/google-closure-compiler/compiler.jar --warning_level=VERBOSE --language_in=ES6 --externs=./externs/imacros.js --language_out=ES5_STRICT --compilation_level=ADVANCED --formatting=SINGLE_QUOTES --js_output_file {} --js {} \\;",
+    "bundle": "browserify ./build/main.js --ignore ./build/dev-config.js -o $npm_package_main -p [bannerify --file ./build/banner.txt]",
+    "watch:bundle": "watchify ./src/main.js -o $npm_package_main -t [babelify] -p [bannerify --file ./src/banner.txt] -v",
+    "prebuild": "npm run lint -s && npm run style -s && npm test -s && npm run clear:build -s && npm run copysrc -s",
+    "build": "npm run compile -s && npm run bundle -s",
+    "postbuild": "npm run bom -s",
+    "test": "echo 'No test yet'; exit 0"
   },
   "repository": {
     "type": "git",
@@ -20,8 +30,11 @@
   },
   "devDependencies": {
     "add-bom": "latest",
+    "babelify": "7.3.0",
     "bannerify": "latest",
     "browserify": "latest",
+    "eslint": "3.1.1",
+    "jscs": "3.0.7",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.4.3",
     "watchify": "latest"

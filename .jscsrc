@@ -1,0 +1,11 @@
+{
+  "preset": "google",
+  "disallowQuotedKeysInObjects": false,
+  "requireDotNotation": false,
+  "requireCurlyBraces": false,
+  "maximumLineLength": 200,
+  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+  "jsDoc": {
+    "checkAnnotations": "jsdoc3"
+  }
+}
